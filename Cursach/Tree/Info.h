@@ -9,6 +9,7 @@
 #include <random>
 #include <string>
 #include <algorithm>
+#include <typeinfo>
 
 /**
  * This is a stored class that stores the necessary information.

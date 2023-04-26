@@ -23,7 +23,7 @@
  * @private : p_print(node_point local) - Recursive traversal algorithm
  * @private : init_node(T value) - Initialization for nodes with std::new.
  */
-template <class T>
+template <class T> 
 class Tree {
     friend class Node<T>;
     public:
@@ -75,7 +75,7 @@ class Tree {
         bool p_search(T value, node_point local);
         void p_erase(T value, node_point local);
         void p_clear(node_point local);
-        void p_print(node_point local) const;
+        void p_print(node_point local, int level) const;
 };
 
 #include "Tree.tpp"

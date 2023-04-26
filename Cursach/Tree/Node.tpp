@@ -2,15 +2,20 @@
 
 template <class T>
 Node<T>::Node() {
-    this->data = nullptr;
-    this->clear();
+    this->data = new Info<T>();
+    this->back = nullptr;
+    this->brother = nullptr;
+    this->parent = nullptr;
+    this->son = nullptr;
 }
 
 template <class T>
-Node<T>::Node(T value): Node() {
-    this->clear();
-    this->data = new T;
-    this->data = std::move(value);
+Node<T>::Node(T value) {
+    this->data = new Info<T>(value);
+    this->back = nullptr;
+    this->brother = nullptr;
+    this->parent = nullptr;
+    this->son = nullptr;
 }
 
 template <class T>
@@ -66,8 +71,8 @@ void Node<T>::clear() {
 
 // Accessor (or Getter)
 template <class T>
-T Node<T>::getData() const noexcept {
-    return &this->data;
+Info<T> *Node<T>::getData() const noexcept {
+    return this->data;
 }
 
 template <class T>

@@ -96,7 +96,10 @@ void Tree<T>::insert(T value) {
 
 template <class T>
 void Tree<T>::p_insert(T value, typename Tree<T>::node_point local) {
+    auto node = new Node<T>(value);
     if (local == nullptr) {
+        this->root = node;
+    } else {
 
     }
 }
@@ -197,18 +200,22 @@ void Tree<T>::p_clear(typename Tree<T>::node_point local) {
 template <class T>
 void Tree<T>::print() const {
     if (this->root != nullptr) {
-        this-p_print(this->root);
+        this->p_print(this->root, 0);
     }
 }
 
 // Need make user-friendly std::cout
 template <class T>
-void Tree<T>::p_print(typename Tree<T>::node_point local) const {
+void Tree<T>::p_print(typename Tree<T>::node_point local, int level) const {
+    auto temp = local->getData();
+    std::cout << level << ": Name: " << temp->getName()
+    << " Methods: " << temp->getMethods()
+    << " Properties: " <<  temp->getProperties() << std::endl;
     if (local->getBrother() != nullptr) {
-        this->p_print(local->getBrother());
+        this->p_print(local->getBrother(), level);
     }
     if (local->getSon() != nullptr) {
-        this->p_print(local->getSon());
+        this->p_print(local->getSon(), level + 1);
     }
 }
 
@@ -217,11 +224,11 @@ int Tree<T>::counting(Tree::node_point local) {
     int i = 0;
     if (local->getBrother() != nullptr) {
         i++;
-        this->counting(local->getBrother());
+        i += this->counting(local->getBrother());
     }
     if (local->getSon() != nullptr) {
         i++;
-        this->counting(local->getSon());
+        i += this->counting(local->getSon());
     }
     return i;
 }
