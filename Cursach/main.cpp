@@ -3,8 +3,6 @@
 
 int main() {
     Tree<std::string> tree;
-    tree.insert("gg");
-    tree.print();
-    std::cout << "All fine" << std::endl;
+    tree.insert("A");
     return 0;
 }

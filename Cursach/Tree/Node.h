@@ -38,7 +38,7 @@ class Node {
         ~Node();
 
         // Accessor (or Getter)
-        Info<T> *getData() const noexcept;
+        T getData() const noexcept;
         const_node_point getParent() const noexcept;
         const_node_point getBrother() const noexcept;
         const_node_point getBack() const noexcept;

@@ -11,7 +11,8 @@
  * @tparam T - It's maybe different types.
  * @param count (type unsigned) - Count of Nodes in Tree.
  * @param *root (type class Node) - Pointer for header Node.
- * @public : insert(value) - Adding element into tree.
+ * @public : insert(T value) - Adding element into tree.
+ * @public : insert(T value, T srch) - Adding element into tree after Node with data == srch.
  * @private : p_insert(T value, node_point local) - Recursive traversal algorithm
  * @public : search(T value) - Search for element in tree.
  * @private : p_search(T value, node_point local) - Recursive traversal algorithm
@@ -23,7 +24,7 @@
  * @private : p_print(node_point local) - Recursive traversal algorithm
  * @private : init_node(T value) - Initialization for nodes with std::new.
  */
-template <class T> 
+template <class T>
 class Tree {
     friend class Node<T>;
     public:
@@ -70,12 +71,11 @@ class Tree {
         int counting(node_point local);
         void copy(node_point local);
         void move(tree &other);
-        void p_insert(T value, node_point local);
         void p_insert(T value, T srch, node_point local);
         bool p_search(T value, node_point local);
         void p_erase(T value, node_point local);
         void p_clear(node_point local);
-        void p_print(node_point local, int level) const;
+        void p_print(node_point local) const;
 };
 
 #include "Tree.tpp"
