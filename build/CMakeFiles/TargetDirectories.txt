@@ -1,0 +1,3 @@
+C:/Coursework_of_the_second_year/build/CMakeFiles/M_Tisbi_Cursach.dir
+C:/Coursework_of_the_second_year/build/CMakeFiles/edit_cache.dir
+C:/Coursework_of_the_second_year/build/CMakeFiles/rebuild_cache.dir
