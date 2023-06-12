@@ -1,8 +1,0 @@
-[
-{
-  "directory": "C:/Coursework_of_the_second_year/build",
-  "command": "C:\\MinGW\\bin\\g++.exe   -g -std=gnu++14 -o CMakeFiles\\M_Tisbi_Cursach.dir\\main.cpp.obj -c C:\\Coursework_of_the_second_year\\Cursach\\main.cpp",
-  "file": "C:/Coursework_of_the_second_year/Cursach/main.cpp",
-  "output": "CMakeFiles/M_Tisbi_Cursach.dir/main.cpp.obj"
-}
-]
